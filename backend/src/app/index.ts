@@ -1,10 +1,8 @@
 import express from 'express';
 import "dotenv/config";
+import routes from './routes/index.js';
 
 const app = express();
-
-app.get('', (req, res)=>{
-    res.json('Api ready');
-})
+app.use(routes);
 
 export default app;
