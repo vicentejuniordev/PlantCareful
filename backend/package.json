@@ -8,9 +8,10 @@
   "main": "index.js",
   "scripts": {
     "start": "tsx --watch src/index.ts",
-    "knex:migrate": "npx knex --knexfile"
+    "knex:migrate": "tsx ./node_modules/knex/bin/cli.js --knexfile knexfile.ts migrate:latest"
   },
   "devDependencies": {
+    "sqlite3": "^5.1.7",
     "tsx": "^4.20.6",
     "typescript": "^5.9.3",
     "zod": "^4.1.12"

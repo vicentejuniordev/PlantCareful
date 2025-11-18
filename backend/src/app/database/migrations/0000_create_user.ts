@@ -1,5 +1,5 @@
 import type { Knex } from "knex";
-import { TableNames } from "../TableNames.js";
+import { TableNames } from "../ETableNames.js";
 
 
 export async function up(knex:Knex): Promise<void> {
