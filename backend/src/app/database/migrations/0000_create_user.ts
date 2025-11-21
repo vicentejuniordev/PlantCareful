@@ -8,10 +8,12 @@ export async function up(knex:Knex): Promise<void> {
     .createTable(TableNames.user, table =>{
         table.bigIncrements('id').primary().index()
         table.string('username', 100).index().notNullable
-        table.string('email', 200).notNullable
-        table.string('cidade', 100).notNullable
-        table.string('state', 50).notNullable
-        table.string('password', 8).notNullable
+        table.string('email', 200).notNullable().unique()
+        table.string('city', 100).notNullable()
+        table.string('state', 50).notNullable()
+        table.string('password', 8).notNullable()
+        table.timestamp('created_at').defaultTo(knex.fn.now()).notNullable()
+
 
         table.comment('table users')
     }).then(()=>{

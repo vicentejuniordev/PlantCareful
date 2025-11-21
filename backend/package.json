@@ -8,7 +8,8 @@
   "main": "index.js",
   "scripts": {
     "start": "tsx --watch src/index.ts",
-    "knex:migrate": "tsx ./node_modules/knex/bin/cli.js --knexfile knexfile.ts migrate:latest"
+    "knex:migrate": "tsx ./node_modules/knex/bin/cli.js --knexfile knexfile.ts migrate:latest",
+    "knex:rollback": "tsx ./node_modules/knex/bin/cli.js --knexfile knexfile.ts migrate:rollback"
   },
   "devDependencies": {
     "sqlite3": "^5.1.7",
