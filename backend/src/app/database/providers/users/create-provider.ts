@@ -8,6 +8,7 @@ export const create = async (user: Omit<User, 'id'>): Promise<Omit<User, 'id'> |
         const [result] = await KnexInstace(TableNames.user).insert(user).returning('*');
 
         if(typeof result === 'object'){
+            delete result.password;
             return result
         }
         return new Error('Erro ao cadastrar usuário')
