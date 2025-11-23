@@ -15,6 +15,6 @@ export const userRegisterController = async (req: Request, res: Response) =>{
          message: result.message
       }})
    } else {
-      return res.status(201).json(result);
+      return res.status(201).json({message: "Usuário criado com sucesso!"});
    }
 };
