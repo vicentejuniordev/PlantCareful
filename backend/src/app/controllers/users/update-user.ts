@@ -1,6 +1,6 @@
 import type { Request, Response } from "express";
 import { da } from "zod/v4/locales";
-import { updateUser } from "../../database/providers/users/update-user.js";
+import { updateUser } from "../../database/providers/users/update-user-provider.js";
 
 
 export const updateUserController = async (req: Request, res : Response) =>{
