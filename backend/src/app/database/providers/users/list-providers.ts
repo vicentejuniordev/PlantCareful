@@ -10,6 +10,6 @@ export const listUsers = async() => {
     } catch (error) {
         console.log(error);
         
-        return new Error('Erro ao acessar o banco!!!')
+        return new Error('Erro ao acessar o banco!!!');
     }
 }

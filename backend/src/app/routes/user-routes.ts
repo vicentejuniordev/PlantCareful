@@ -13,7 +13,7 @@ routes.get('',(req, res)=>{
 
 routes.post('/users', userRegisterMiddle, userRegisterController);
 routes.get('/users',listUsersControllers );
-routes.put('/users/:id', updateUserController);
+routes.patch('/users/:id', updateUserController);
 routes.delete('/users/:id', deleteUserController);
 
 
