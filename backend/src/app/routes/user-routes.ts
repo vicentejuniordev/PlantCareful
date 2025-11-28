@@ -5,6 +5,7 @@ import { listUsersControllers } from "../controllers/users/list-users.js";
 import { updateUserController } from "../controllers/users/update-user.js";
 import { deleteUserController } from "../controllers/users/delete-user.js";
 import { loginUser } from "../controllers/users/login-user.js";
+import { userAuthMiddle } from "../middlewares/users/user-auth-middle.js";
 
 const routes = Router();
 
@@ -14,7 +15,7 @@ routes.get('',(req, res)=>{
 
 routes.post('/users', userRegisterMiddle, userRegisterController);
 routes.post('/users/login', loginUser);
-routes.get('/users',listUsersControllers );
+routes.get('/users',userAuthMiddle,listUsersControllers );
 routes.patch('/users/:id', updateUserController);
 routes.delete('/users/:id', deleteUserController);
 

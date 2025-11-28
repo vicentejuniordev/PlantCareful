@@ -18,11 +18,8 @@ export const loginUser = async (req: Request, res: Response)=>{
         return res.status(404).json({message: 'Usuário não encontrado'});
     }
 
-    console.log(credentials.password, user.password);
-
     const isPasswordValid = await bcrypt.compare(credentials.password, user.password);
 
-    console.log(isPasswordValid)
     if(isPasswordValid === false){
         return res.status(401).json({message: 'Senha inválida'});
     }
