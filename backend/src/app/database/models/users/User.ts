@@ -5,5 +5,6 @@ export interface User {
     email : string,
     city : string,
     state : string,
-    password : string
+    password : string,
+    refreshToken?: string
 }

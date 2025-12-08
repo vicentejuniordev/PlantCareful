@@ -11,7 +11,8 @@ export async function up(knex:Knex): Promise<void> {
         table.string('email', 200).notNullable().unique()
         table.string('city', 100).notNullable()
         table.string('state', 50).notNullable()
-        table.string('password', 8).notNullable()
+        table.string('password', 8).notNullable(),
+        table.string('refresh_token', 255).nullable(),
         table.timestamp('created_at').defaultTo(knex.fn.now()).notNullable()
 
 

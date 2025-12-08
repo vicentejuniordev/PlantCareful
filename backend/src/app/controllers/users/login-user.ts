@@ -4,7 +4,7 @@ import { TableNames } from "../../database/ETableNames.js";
 import bcrypt from "bcrypt";
 import jwt from 'jsonwebtoken';
 import generateToken from "../../services/tokens/generate-token.js";
-import generateRefreshToken from "../../services/tokens/refresh-token.js";
+import generateRefreshToken from "../../services/tokens/generate-refresh-token.js";
 
 
 export const loginUser = async (req: Request, res: Response)=>{
@@ -28,6 +28,10 @@ export const loginUser = async (req: Request, res: Response)=>{
 
     const token = generateToken({id: user.id});
     const refreshToken = generateRefreshToken({id: user.id});
+
+    await KnexInstace(TableNames.user).update({refresh_token: refreshToken}).where({id: user.id});
+
+
     return res.status(200).json({message: 'Login realizado com sucesso', token, refreshToken });
 
 
