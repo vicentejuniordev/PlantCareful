@@ -3,6 +3,8 @@ import KnexInstace from "../../database/knex/index.js";
 import { TableNames } from "../../database/ETableNames.js";
 import bcrypt from "bcrypt";
 import jwt from 'jsonwebtoken';
+import generateToken from "../../services/tokens/generate-token.js";
+import generateRefreshToken from "../../services/tokens/refresh-token.js";
 
 
 export const loginUser = async (req: Request, res: Response)=>{
@@ -24,8 +26,9 @@ export const loginUser = async (req: Request, res: Response)=>{
         return res.status(401).json({message: 'Senha inválida'});
     }
 
-    const token = jwt.sign({id: user.id},process.env.JWT_SECRET as string, {expiresIn: process.env.JWT_EXPIRES as string});
-    return res.status(200).json({message: 'Login realizado com sucesso', token });
+    const token = generateToken({id: user.id});
+    const refreshToken = generateRefreshToken({id: user.id});
+    return res.status(200).json({message: 'Login realizado com sucesso', token, refreshToken });
 
 
 
