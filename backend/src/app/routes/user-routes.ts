@@ -17,7 +17,7 @@ routes.post('/users', userRegisterMiddle, userRegisterController);
 routes.post('/users/login', loginUser);
 routes.get('/users',userAuthMiddle,listUsersControllers );
 routes.patch('/users/:id', updateUserController);
-routes.delete('/users/:id', deleteUserController);
+routes.delete('/users/me', userAuthMiddle, deleteUserController);
 
 
 
