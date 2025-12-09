@@ -3,8 +3,8 @@ import KnexInstace from "../../database/knex/index.js";
 import { TableNames } from "../../database/ETableNames.js";
 import bcrypt from "bcrypt";
 import jwt from 'jsonwebtoken';
-import generateToken from "../../services/tokens/generate-token.js";
-import generateRefreshToken from "../../services/tokens/generate-refresh-token.js";
+import generateToken from "../../services/Auth/generate-token.js";
+import generateRefreshToken from "../../services/Auth/generate-refresh-token.js";
 
 
 export const loginUser = async (req: Request, res: Response)=>{

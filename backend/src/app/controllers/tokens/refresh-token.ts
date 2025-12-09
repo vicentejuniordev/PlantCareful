@@ -1,8 +1,8 @@
 import { TableNames } from '../../database/ETableNames.js';
 import KnexInstace from '../../database/knex/index.js';
 import jwt from 'jsonwebtoken';
-import generateToken from '../../services/tokens/generate-token.js';
-import generateRefreshToken from '../../services/tokens/generate-refresh-token.js';
+import generateToken from '../../services/Auth/generate-token.js';
+import generateRefreshToken from '../../services/Auth/generate-refresh-token.js';
 import type { Request, Response } from 'express';
 
 const refreshToken = async (req: Request, res: Response) => {
