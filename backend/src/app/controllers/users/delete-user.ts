@@ -4,7 +4,6 @@ import { deleteUser } from "../../database/providers/users/delete-provider.js";
 export const deleteUserController = (req: Request, res : Response ) =>{
     const id = Number(req.user.id);
 
-    console.log(req.user.id);
     
     const isDeleted = deleteUser(id);
 

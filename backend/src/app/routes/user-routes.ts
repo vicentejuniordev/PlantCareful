@@ -21,10 +21,11 @@ routes.post('/tokens/refresh', refreshToken);
 //rotas de usuário
 routes.post('/users', userRegisterMiddle, userRegisterController);
 routes.post('/users/login', loginUser);
+routes.patch('/users/me', userAuthMiddle, updateUserController);
+routes.delete('/users/me', userAuthMiddle, deleteUserController);
 
 routes.get('/users',userAuthMiddle,listUsersControllers );
-routes.patch('/users/:id', updateUserController);
-routes.delete('/users/me', userAuthMiddle, deleteUserController);
+
 
 
 

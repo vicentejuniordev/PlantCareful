@@ -5,7 +5,7 @@ import { updateUser } from "../../database/providers/users/update-user-provider.
 
 export const updateUserController = async (req: Request, res : Response) =>{
         const data = req.body;
-        const userId = Number(req.params.id);
+        const userId = Number(req.user.id);
 
         const isUpdated = await updateUser(userId, data);
         if(isUpdated instanceof Error){
