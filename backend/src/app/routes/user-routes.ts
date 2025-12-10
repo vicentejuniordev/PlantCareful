@@ -1,7 +1,6 @@
 import { Router } from "express";
 import { userRegisterMiddle } from "../middlewares/users/user-register-middle.js";
 import { userRegisterController } from "../controllers/users/user-register.js";
-import { listUsersControllers } from "../controllers/users/list-users.js";
 import { updateUserController } from "../controllers/users/update-user.js";
 import { deleteUserController } from "../controllers/users/delete-user.js";
 import { loginUser } from "../controllers/users/login-user.js";
@@ -24,7 +23,6 @@ routes.post('/users/login', loginUser);
 routes.patch('/users/me', userAuthMiddle, updateUserController);
 routes.delete('/users/me', userAuthMiddle, deleteUserController);
 
-routes.get('/users',userAuthMiddle,listUsersControllers );
 
 
 
