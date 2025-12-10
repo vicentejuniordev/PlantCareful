@@ -26,7 +26,7 @@ export const loginUser = async (req: Request, res: Response)=>{
         return res.status(401).json({message: 'Senha inválida'});
     }
 
-    const token = generateToken({id: user.id});
+    const token = generateToken({id: user.id, role: user.role});
     const refreshToken = generateRefreshToken({id: user.id});
 
     await KnexInstace(TableNames.user).update({refresh_token: refreshToken}).where({id: user.id});

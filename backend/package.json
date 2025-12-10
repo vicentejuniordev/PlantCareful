@@ -9,7 +9,8 @@
   "scripts": {
     "start": "tsx --watch src/index.ts",
     "knex:migrate": "tsx ./node_modules/knex/bin/cli.js --knexfile knexfile.ts migrate:latest",
-    "knex:rollback": "tsx ./node_modules/knex/bin/cli.js --knexfile knexfile.ts migrate:rollback"
+    "knex:rollback": "tsx ./node_modules/knex/bin/cli.js --knexfile knexfile.ts migrate:rollback",
+    "knex:make": "tsx ./node_modules/knex/bin/cli.js --knexfile knexfile.ts migrate:make"
   },
   "devDependencies": {
     "@types/bcrypt": "^6.0.0",

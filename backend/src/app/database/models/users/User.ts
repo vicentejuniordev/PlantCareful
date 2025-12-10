@@ -6,5 +6,6 @@ export interface User {
     city : string,
     state : string,
     password : string,
-    refreshToken?: string
+    refreshToken?: string,
+    role: 'user' | 'admin'
 }

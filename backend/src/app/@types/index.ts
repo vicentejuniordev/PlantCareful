@@ -4,5 +4,6 @@ export type User = {
     email : string,
     city : string,
     state : string,
-    password : string
+    password : string,
+    role: 'user' | 'admin'
 }

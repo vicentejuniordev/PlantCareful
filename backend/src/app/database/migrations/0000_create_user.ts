@@ -13,6 +13,7 @@ export async function up(knex:Knex): Promise<void> {
         table.string('state', 50).notNullable()
         table.string('password', 8).notNullable(),
         table.string('refresh_token', 255).nullable(),
+        table.enu('role', ['user', 'admin']).defaultTo('user').notNullable(),
         table.timestamp('created_at').defaultTo(knex.fn.now()).notNullable()
 
 

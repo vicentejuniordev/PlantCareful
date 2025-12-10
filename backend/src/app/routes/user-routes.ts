@@ -13,9 +13,6 @@ routes.get('',(req, res)=>{
     res.json({message: "Hello World"})
 });
 
-//rotas de token
-routes.post('/tokens/refresh', refreshToken);
-
 
 //rotas de usuário
 routes.post('/users', userRegisterMiddle, userRegisterController);
