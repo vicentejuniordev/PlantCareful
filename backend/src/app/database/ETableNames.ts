@@ -1,4 +1,5 @@
 
 export enum TableNames {
-    user = 'user'
+    user = 'user',
+    plant = 'plants'
 }

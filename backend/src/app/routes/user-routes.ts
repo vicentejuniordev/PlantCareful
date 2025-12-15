@@ -5,7 +5,6 @@ import { updateUserController } from "../controllers/users/update-user.js";
 import { deleteUserController } from "../controllers/users/delete-user.js";
 import { loginUser } from "../controllers/users/login-user.js";
 import { userAuthMiddle } from "../middlewares/users/user-auth-middle.js";
-import refreshToken from "../controllers/tokens/refresh-token.js";
 
 const routes = Router();
 
