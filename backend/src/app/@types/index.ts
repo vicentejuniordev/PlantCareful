@@ -7,3 +7,10 @@ export type User = {
     password : string,
     role: 'user' | 'admin'
 }
+
+export type Plant ={
+    name: string,
+    species: string,
+    wateringFrequency: number,
+    userId: number
+}
