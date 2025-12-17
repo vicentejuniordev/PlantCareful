@@ -11,8 +11,8 @@ export async function up(knex: Knex): Promise<void>{
         table.string('species', 100).notNullable();
         table.integer('watering_frequency').notNullable();
         table.date('planted_at').notNullable();
-        table.bigInteger('owner_id').unsigned().notNullable();
-        table.foreign('owner_id').references('id').inTable(TableNames.user).onDelete('CASCADE');
+        table.bigInteger('user_id').unsigned().notNullable();
+        table.foreign('user_id').references('id').inTable(TableNames.user).onDelete('CASCADE');
         table.timestamp('created_at').defaultTo(knex.fn.now()).notNullable();
 
         table.comment('table plants');

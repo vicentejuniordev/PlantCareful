@@ -12,5 +12,6 @@ export type Plant ={
     name: string,
     species: string,
     wateringFrequency: number,
-    userId: number
+    planted_at: Date,
+    user_id: number
 }
