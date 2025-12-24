@@ -27,3 +27,4 @@ export async function down(knex: Knex){
         console.log(`droped table ${TableNames.plant}`);
     });
 }
+
