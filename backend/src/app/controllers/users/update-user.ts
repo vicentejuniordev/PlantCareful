@@ -1,5 +1,4 @@
 import type { Request, Response } from "express";
-import { da } from "zod/v4/locales";
 import { updateUser } from "../../database/providers/users/update-user-provider.js";
 
 

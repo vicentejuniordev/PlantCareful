@@ -1,7 +1,5 @@
 import type { Request, Response } from "express";
 import deletePlant from "../../database/providers/plants/delete-provider.js";
-import { tr } from "zod/v4/locales";
-
 
 const deletePlantController = async (req: Request, res: Response) => {
     const plantId = Number(req.params.id);
