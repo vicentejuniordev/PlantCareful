@@ -25,5 +25,5 @@
     "moduleDetection": "force",
     "skipLibCheck": true,
   },
-  "exclude": ["knexfile.ts"]
+  "exclude": ["knexfile.ts", "**/*test.ts"]
 }
